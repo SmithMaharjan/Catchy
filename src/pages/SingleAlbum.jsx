@@ -6,15 +6,15 @@ const SingleAlbum = () => {
     const location = useLocation()
     const album = location.state || {}
 
-    console.log(album.musics, " is music available")
+    console.log(album, " is music available")
 
     return (
         <div>
             <h1>{album?.name}</h1>
             <ul>
-                {album?.musics?.map((music) => (
-                    <li>
-                        {music}
+                {album?.musics?.map((music, index) => (
+                    <li key={index}>
+                        {music.name}
                     </li>
 
                 ))}
