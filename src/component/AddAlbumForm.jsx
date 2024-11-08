@@ -55,7 +55,9 @@ const AddAlbumForm = () => {
                 })
                 console.log(response, "albumform response")
                 console.log(albums)
-                setAlbums((prev) => [...prev, { name: albumName, user: localStorage.getItem("id"), musics: [...selectedMusic] }])
+                setAlbums((prev) => [...prev, {
+                    name: albumName, user: localStorage.getItem("id"), musics: selectedMusic.map((music) => ({ name: music }))
+                }])
                 console.log(albums, "album state value")
 
 
@@ -67,6 +69,9 @@ const AddAlbumForm = () => {
         Album()
 
     }
+    useEffect(() => {
+        console.log(albums, "checking albums")
+    }, [albums])
 
     return (
         <div>
