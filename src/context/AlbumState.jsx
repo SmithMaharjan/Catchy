@@ -5,7 +5,9 @@ const AlbumContextProvider = ({ children }) => {
     const [albums, setAlbums] = useState([{
         name: "",
         user: "",
-        musics: []
+        musics: [{
+            name: ""
+        }]
     }])
     // const [musics, setMusics] = useState([])
     const value = {
